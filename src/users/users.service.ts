@@ -22,4 +22,8 @@ export class UsersService {
   getUser(id: number) {
     return this.userRepository.findOne({ where: { id } });
   }
+  
+  deleteUser(id: number) {
+    return this.userRepository.delete({ id });
+  }
 }
