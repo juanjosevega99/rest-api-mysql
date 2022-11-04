@@ -8,6 +8,7 @@ import {
   Post,
   Patch,
 } from '@nestjs/common';
+import { CreateProfileDto } from './dto/createProfile.dto';
 import { CreateUserDto } from './dto/createUser.dto';
 import { UpdateUserDto } from './dto/updateUser.dto';
 import { User } from './user.entity';
@@ -44,5 +45,13 @@ export class UsersController {
     @Body() user: UpdateUserDto,
   ) {
     return this.usersService.updateUser(id, user);
+  }
+
+  @Post(':id/profile')
+  createProfile(
+    @Param('id', ParseIntPipe) id: number,
+    @Body() profile: CreateProfileDto,
+  ) {
+    return this.usersService.createProfile(id, profile);
   }
 }
