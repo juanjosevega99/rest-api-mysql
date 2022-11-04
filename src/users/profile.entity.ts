@@ -6,10 +6,10 @@ export class Profile {
   id: number;
 
   @Column()
-  firstName: string;
+  firstname: string;
 
   @Column()
-  lastName: string;
+  lastname: string;
 
   @Column({ nullable: true })
   age: number;
